@@ -9,12 +9,12 @@ words_per_minute: 150
 baseurl: "/"
 
 # Website info
-title: squ1rrel
-description: The Vanderbilt University CTF Club
-cover: assets/images/squ1rrel_cover.webp
-logo: assets/images/squ1rrel_white.webp
-logo_dark: assets/images/favicon.webp
-favicon: assets/images/favicon.webp
+title: Chaotic Pretty Good
+description: Satire, social commentary, pranks, some actual amateur journalism
+cover: assets/images/cover.png
+logo: assets/images/logo.svg
+logo_dark: assets/images/logo.svg
+favicon: assets/images/favicon.svg
 CNAME: #add cname for website to be created
 
 # Social info
@@ -22,7 +22,7 @@ navigation: True # show the navbar links
 subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
-twitter: squ1rrelCTF # replace by your username
+twitter: chaoticPrettyGood # replace by your username
 facebook: False # replace by your username
 
 # Disqus
@@ -67,13 +67,13 @@ feed:
 # or "master" otherwise
 safe: False
 lsi: False
-username: squ1rrel-ctf
-repo: squ1rrel.dev
+username: NickkTMD
+repo: ChaoticPrettyGood
 branch: main
 relative_source: ./
 destination: ./_site/
-production_url: https://squ1rrel.dev/
-source_url: https://github.com/squ1rrel-ctf/squ1rrel.dev
+production_url: https://chaoticprettygood.com/
+source_url: https://github.com/NickkTMD/chaoticprettygood.com
 
 exclude:
   - assets/css

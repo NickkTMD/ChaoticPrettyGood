@@ -156,7 +156,7 @@ body {
     align-items: center;
     padding: 10vw 4vw;
     min-height: 200px;
-    max-height: 450px;
+    max-height: 350px;
     text-align: center;
 }
 
@@ -169,7 +169,7 @@ body {
 }
 
 .site-logo {
-    max-height: 60px;
+    max-height: 225px;
 }
 
 .site-description {
@@ -711,10 +711,10 @@ The first (most recent) post in the list is styled to be bigger than the others 
     margin: 0;
 }
 
-.post-template .kg-card-markdown > p:first-child {
+/* .post-template .kg-card-markdown > p:first-child {
     font-size: 1.25em;
     line-height: 1.5em;
-}
+} */
 
 .post-full-content a {
     color: #000;

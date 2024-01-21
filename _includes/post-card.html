@@ -32,7 +32,7 @@
             </a>
             <footer class="post-card-meta">
                 {% for author in site.data.authors %}
-                    {% if author[1].username == post.author %}
+                    {% if author[1].username == post.author` %}
                         {% if author[1].picture %}
                         <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ author[1].name }}" />
                         {% endif %}
