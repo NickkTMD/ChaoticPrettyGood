@@ -128,7 +128,7 @@ body {
     left: 0;
     z-index: 10;
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.45);
 }
 
 .site-header:after {

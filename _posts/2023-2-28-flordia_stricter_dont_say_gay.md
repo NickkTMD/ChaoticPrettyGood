@@ -3,7 +3,7 @@ layout: post
 current: post
 cover:  assets/images/covers/dont-say-gay.jpg
 navigation: True
-title: "Florida Passes New, Stricter"
+title: "Florida Passes New, Stricter \"Don't Say ____\" Bill"
 date: 2023-2-28 02:00:00
 tags: [satire]
 class: post-template

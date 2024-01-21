@@ -10,7 +10,7 @@ baseurl: "/"
 
 # Website info
 title: Chaotic Pretty Good
-description: Satire, social commentary, pranks, some actual amateur journalism
+description: 
 cover: assets/images/cover.png
 logo: assets/images/logo.svg
 logo_dark: assets/images/logo.svg
@@ -22,7 +22,7 @@ navigation: True # show the navbar links
 subscribers: False # you need to connect an external service for this to work,
 # if 'True' the submit button is disabled for now, but you can change that
 # by editing `_includes/subscribe-form.html`
-twitter: chaoticPrettyGood # replace by your username
+twitter: ChaoticPrettyGood # replace by your username
 facebook: False # replace by your username
 
 # Disqus
