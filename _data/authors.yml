@@ -2,10 +2,11 @@ nickgebo:
   username: nickgebo
   name: Nick Gebo
   location: Nashville, TN
+  exact_location: True
   url_full: https://github.com/nickktmd
   url: github.com/nickkTMD
-  bio: Nick is a.
+  bio: "As a young child, Nicholas unveiled unparalleled brilliance. He learned to speak english at age 6 and learned to read it at age 12. Just kidding. He still cannot read."
   picture: assets/images/authors/nick.jpg
   facebook: False
-  twitter: False
+  twitter: gebo_nick
   cover: assets/images/authors/nick-cover.jpeg

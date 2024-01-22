@@ -39,14 +39,96 @@ logo: 'assets/images/ghost.png'
                     {% if author[1].twitter %}
                         <a class="social-link social-link-tw" href="https://twitter.com/{{ author[1].twitter }}" target="_blank" rel="noopener">{% include twitter.html %}</a>
                     {% endif %}
-                    {% if author[1].facebook %}
-                        <a class="social-link social-link-fb" href="https://facebook.com/{{ author[1].facebook }}" target="_blank" rel="noopener">{% include facebook.html %}</a>
-                    {% endif %}
-                    <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{ site.url }}{{ site.baseurl }}author/{{ page.author }}/feed.xml" target="_blank" rel="noopener">{% include rss.html %}</a>
+                    <!-- <a class="social-link social-link-rss" href="https://feedly.com/i/subscription/feed/{{ site.url }}{{ site.baseurl }}author/{{ page.author }}/feed.xml" target="_blank" rel="noopener">{% include rss.html %}</a> -->
                 </div>
             </div>
         </div>
     </header>
+
+    {% if author[1].exact_location %}
+        <div class="author-exact-location-outer">
+            <div class="author-exact-location">
+                <!-- <span itemprop="name" class="p-locality">{{ author.location | newline_to_br }}</span> -->
+    
+                <div>
+                    <h3>Author Exact Location</h3>
+
+                    <p>
+                        Setting a new standard in accountable journalism, our author pages now feature precise, real-time location tracking. This groundbreaking transparency allows readers to directly engage with our writers, setting us apart from other, lesser news sources that often hide behind anonymity. Never us- we stand ready to defend our work at any moment.
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: row; gap: 16px">
+                    <div class="width: 80%;">
+                        <h4 style="margin: 0">Live Location</h4>
+                        <span itemprop="name" class="p-locality" style="width: 600px"></span>
+                    </div>
+
+                    <div class="width: 20%;">    
+                        <h4 style="margin: 0">Directions</h4>
+
+                        <!-- Link icon -->
+                        <a href="" class="google-maps-link">
+                            <i class="fas fa-fw fa-link" aria-hidden="true"></i>
+                            Google Maps (direct)
+                        </a>
+
+                        <br />
+            
+                        <a href="" class="google-maps-link-sword">
+                            <i class="fas fa-fw fa-link" aria-hidden="true"></i>
+                            Google Maps (stop at sword shop on the way)
+                        </a>
+                    </div>
+
+                </div>
+                
+                <span class="icon" style="text-align: center;">{% include refresh.html %} <i class="p-updated"> </i></span>
+    
+                <script>
+                    const url = "https://sam-get-location.nisala.workers.dev/?ppassword=akldsjfklajldkfjlkaadsf&key=location";
+                    const pLocalityElement = document.querySelector(".p-locality");
+                    const updatedElement = document.querySelector(".p-updated");
+                    const link = document.querySelector('.google-maps-link');
+                    const linkSword = document.querySelector('.google-maps-link-sword');
+            
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(data => {
+                            const formattedData = data.replace(/\n/g, " ");
+                            pLocalityElement.innerHTML = formattedData;
+
+                            // Pull out (updated %%)
+                            const updatedRegex = /\(updated .+?\)/;
+
+                            const updatedMatch = data.match(updatedRegex)[0];
+
+                            updatedElement.innerHTML = updatedMatch;
+
+                            // remove from data
+                            pLocalityElement.innerHTML = pLocalityElement.innerHTML.replace(updatedRegex, "");
+    
+                            const latRegex = /Latitude:\s*(-?\d+\.\d+)/;
+                            const lngRegex = /Longitude:\s*(-?\d+\.\d+)/;
+    
+                            const latMatch = data.match(latRegex);
+                            const lngMatch = data.match(lngRegex);
+    
+                            const latitude = parseFloat(latMatch[1]);
+                            const longitude = parseFloat(lngMatch[1]);
+    
+                            link.href  = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+    
+                            linkSword.href = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&waypoints=Jalic Blades, 2011 Dayton Blvd, Chattanooga, TN 37415`;
+                        })
+                        .catch(error => {
+                            console.error("Error fetching data:", error);
+                        });
+                </script>
+            </div>
+        </div>
+    {% endif %}
+
     {% endif %}
 {% endfor %}
 <!-- /author -->

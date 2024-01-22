@@ -91,7 +91,7 @@ body {
 
 @media (min-width: 900px) {
     .author-template .post-feed {
-        margin-top: 40px;
+        margin-top: 0px;
         padding-top: 0;
     }
 
@@ -297,6 +297,13 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     color: #fff;
 }
 
+.icon {
+    display: block;
+    margin: 0;
+    padding: 0;
+    margin: 10px 12px;
+}
+
 .social-link:hover {
     opacity: 1;
 }
@@ -306,6 +313,12 @@ The knock-on effect of this is ugly browser-scroll bars at the bottom, so 80px o
     margin: 0;
     height: 1.8rem;
     fill: #fff;
+}
+
+.icon svg {
+    display: inline-block;
+    margin: 0;
+    height: 1.8rem;
 }
 
 .social-link-fb svg {
@@ -1601,7 +1614,7 @@ Usage (In Ghost editor):
 .site-header-content .author-bio {
     z-index: 10;
     flex-shrink: 0;
-    margin: 10px 0 10px 0;
+    margin: 10px 0;
     max-width: 600px;
     font-size: 2rem;
     line-height: 1.3em;
@@ -1622,6 +1635,43 @@ Usage (In Ghost editor):
     margin: 0 0 10px 0;
     font-family: Georgia, serif;
     font-style: italic;
+}
+
+.author-exact-location-outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5vw 0;
+    text-align: center;
+}
+
+.author-exact-location {
+    z-index: 10;
+    flex-shrink: 0;
+    margin: 0;
+    max-width: 800px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #000;
+    border-radius: 6px;
+    padding: 16px;
+    margin: 0 20px;
+
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.author-exact-location div h3 {
+    margin: 0;
+    align-items: start;
+}
+
+.author-exact-location div {
+
 }
 
 .site-header-content .author-location svg {
